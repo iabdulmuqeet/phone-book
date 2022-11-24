@@ -1,0 +1,18 @@
+{
+  "db": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "phone_book",
+    "host": "localhost",
+    "port": 5432,
+
+    "dialect": "postgres",
+    "logging": false,
+
+    "define": {
+      "freezeTableName": true
+    },
+
+    "forceSync": false
+  }
+}
