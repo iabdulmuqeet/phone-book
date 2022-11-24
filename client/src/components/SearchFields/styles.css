@@ -1,0 +1,17 @@
+.field-wrapper {
+  border: 2px solid #d8d8d8;
+  border-radius: 5px;
+  padding: 2px 10px 2px 10px;
+}
+
+.fa-search {
+  color: #888888;
+  font-size: 1rem;
+}
+
+.search-field {
+  outline: none;
+  border: none;
+  margin-left: 5px;
+  font-size: 1.2rem;
+}

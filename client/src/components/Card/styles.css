@@ -1,0 +1,14 @@
+.card-wrapper {
+  border-bottom: 1px solid #d3d3d3;
+  padding: 20px;
+}
+
+.fa-phone {
+  color: #929292;
+}
+
+.contact {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #929292;
+}
