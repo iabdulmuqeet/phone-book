@@ -17,9 +17,7 @@ const Home = () => {
 
   const getAllContacts = async () => {
     const response = await fetchContacts()
-    if (!isEmpty(response)) {
-      setContacts(response.data.contacts)
-    }
+    if (!isEmpty(response)) setContacts(response.data.contacts)
   }
 
   useEffect(() => {
@@ -27,7 +25,6 @@ const Home = () => {
   }, [])
 
   const handleAddContact = async values => {
-    console.log('adding: ', values)
     setloading(true)
     const response = await addContact(values)
     if (isEmpty(response)) toast.error('Adding contact error!')
@@ -35,7 +32,6 @@ const Home = () => {
   }
 
   const handleRemoveContact = async id => {
-    console.log('removing: ', id)
     setloading(true)
     const response = await removeContact(id)
     if (isEmpty(response)) toast.error('Removing contact error!')
