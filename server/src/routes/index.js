@@ -3,6 +3,6 @@ const router = express.Router()
 
 const contact = require('./contact')
 
-router.use('/contact', contact)
+router.use('/contacts', contact)
 
 module.exports = router
