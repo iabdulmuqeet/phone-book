@@ -1,8 +1,8 @@
 import './styles.css'
 
-const Button = ({ submit }) => (
-  <button onClick={submit} type='button' className='btn btn-primary'>
-    + Add Contact
+const Button = ({ submit, name, disabled = false }) => (
+  <button disabled={disabled} onClick={submit} type='submit' className='btn btn-primary'>
+    {name}
   </button>
 )
 
