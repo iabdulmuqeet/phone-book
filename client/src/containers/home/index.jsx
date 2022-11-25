@@ -14,10 +14,17 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false)
   const [loading, setloading] = useState(false)
   const [contacts, setContacts] = useState([])
+  const [allContacts, setAllContacts] = useState([])
 
   const getAllContacts = async () => {
+    setloading(true)
     const response = await fetchContacts()
-    if (!isEmpty(response)) setContacts(response.data.contacts)
+    if (!isEmpty(response)) {
+      const { data: { contacts: resContacts } } = response
+      setContacts(resContacts)
+      setAllContacts(resContacts)
+    }
+    setloading(false)
   }
 
   useEffect(() => {
@@ -27,19 +34,35 @@ const Home = () => {
   const handleAddContact = async values => {
     setloading(true)
     const response = await addContact(values)
-    if (isEmpty(response)) toast.error('Adding contact error!')
+    if (!isEmpty(response)) {
+      const updatedContacts = [...contacts, response.data.contact]
+      setContacts(updatedContacts)
+      setAllContacts(updatedContacts)
+      setShowModal(false)
+    } else {
+      toast.error('Adding contact error!')
+    }
     setloading(false)
   }
 
   const handleRemoveContact = async id => {
     setloading(true)
     const response = await removeContact(id)
-    if (isEmpty(response)) toast.error('Removing contact error!')
+    if (!isEmpty(response)) {
+      const updatedContacts = contacts.filter(contact => contact.contactId !== id)
+      setContacts(updatedContacts)
+      setAllContacts(updatedContacts)
+    } else {
+      toast.error('Removing contact error!')
+    }
     setloading(false)
   }
 
-  const handleSearch = event => {
-    console.log(event.target.value)
+  const handleSearch = ({ target: { value } }) => {
+    const tempAllContacts = [...allContacts]
+    setContacts(tempAllContacts.filter(
+      contact => contact.lastName.toLowerCase().includes(value.toLowerCase()),
+    ))
   }
 
   return (
