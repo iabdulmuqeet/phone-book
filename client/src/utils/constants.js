@@ -1,4 +1,4 @@
-export const contactFieldsInitialValues = { firstName: '', lastName: '', number: '' }
+export const contactFieldsInitialValues = { firstName: '', lastName: '', phoneNumber: '' }
 
 export const contactFields = [
   {
@@ -13,7 +13,7 @@ export const contactFields = [
   },
   {
     type: 'tel',
-    name: 'number',
+    name: 'phoneNumber',
     placeholder: 'Enter contact number',
   },
 ]

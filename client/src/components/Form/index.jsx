@@ -31,6 +31,7 @@ const Form = ({
             </p>
           </div>
         ))}
+        {console.log('errors: ', !isEmpty(errors), errors)}
         <div className='d-flex justify-content-center mt-4'>
           <Button disabled={!isEmpty(errors)} name='Submit' />
         </div>

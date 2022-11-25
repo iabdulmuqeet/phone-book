@@ -7,8 +7,8 @@ const validateContact = (values) => {
   if (!values.lastName) {
     errors.lastName = 'Required'
   }
-  if (!values.number) {
-    errors.number = 'Required'
+  if (!values.phoneNumber) {
+    errors.phoneNumber = 'Required'
   }
   return errors
 }
