@@ -31,7 +31,9 @@ const Form = ({
             </p>
           </div>
         ))}
-        <Button disabled={!isEmpty(errors)} name='Submit' />
+        <div className='d-flex justify-content-center mt-4'>
+          <Button disabled={!isEmpty(errors)} name='Submit' />
+        </div>
       </form>
     )}
   </Formik>
