@@ -2,8 +2,6 @@ const { Sequelize, DataTypes } = require('sequelize')
 
 const contact = require('./contact')
 
-console.log(".env => ", process.env.USERNAME, process.env.PASSWORD, process.env.DATABASE, process.env.HOST)
-
 function init() {
 	const sequelize = new Sequelize(
 		{
