@@ -1,6 +1,6 @@
 exports.makeModel = (sequelize, DataTypes) => {
   const Contact = sequelize.define(
-    "Contact",
+    'Contact',
     {
       contactId: {
         type: DataTypes.INTEGER,
@@ -21,7 +21,7 @@ exports.makeModel = (sequelize, DataTypes) => {
         allowNull: true,
       },
     },
-    { underscored: true, tableName: "contact" }
+    { underscored: true, tableName: 'contact' }
   )
   return Contact
 }
