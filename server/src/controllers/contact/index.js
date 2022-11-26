@@ -38,7 +38,7 @@ exports.updateContact = promise(async (req, res) => {
 exports.deleteContact = promise(async (req, res) => {
   const { contactId } = req.params
 
-	const contact = await contactService.deleteContact({ contactId })
+	const message = await contactService.deleteContact({ contactId })
 
-	res.status(200).json({ contact })
+	res.status(200).json({ message })
 })
