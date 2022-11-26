@@ -9,7 +9,6 @@ services:
       - "8000:8000"
     volumes:
       - ./:/usr/src/app/
-      - /usr/src/app/node_modules
 
   postgres:
     container_name: postgres
@@ -22,4 +21,4 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
+      - ./server/database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
