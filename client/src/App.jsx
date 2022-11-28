@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { ToastContainer } from 'react-toastify'
 
-import Home from 'containers/home'
+import Home from 'container/home'
 
 import 'react-toastify/dist/ReactToastify.css'
 

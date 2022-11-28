@@ -2,8 +2,6 @@ import { Button, TextField } from 'components'
 import { Formik } from 'formik'
 import { isEmpty } from 'lodash'
 
-import styles from './styles.css'
-
 const Form = ({
   fieldsInitialValues, handleSubmition, validate, fields,
 }) => (
@@ -16,8 +14,8 @@ const Form = ({
     {({
       values, errors, touched, handleChange, handleSubmit,
     }) => (
-      <form className={styles.materialForm} onSubmit={handleSubmit}>
-        {fields.map((field) => (
+      <form onSubmit={handleSubmit}>
+        {fields?.map((field) => (
           <div className='mb-3' key={field.name}>
             <TextField
               placeholder={field.placeholder}
@@ -31,7 +29,6 @@ const Form = ({
             </p>
           </div>
         ))}
-        {console.log('errors: ', !isEmpty(errors), errors)}
         <div className='d-flex justify-content-center mt-4'>
           <Button disabled={!isEmpty(errors)} name='Submit' />
         </div>

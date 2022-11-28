@@ -1,11 +1,12 @@
-import { addContact, fetchContacts, removeContact } from 'api/contacts'
 import {
   Button, Card, Form, LoadingModal, Modal, TextField,
 } from 'components'
-import { contactFieldsInitialValues, contactFields } from 'utils/constants'
 import { isEmpty } from 'lodash'
 import { toast } from 'react-toastify'
 import { useEffect, useState } from 'react'
+
+import { addContact, fetchContacts, removeContact } from 'api/contacts'
+import { contactFieldsInitialValues, contactFields } from 'utils/constants'
 import validateContact from 'utils/validations'
 
 import './styles.css'
