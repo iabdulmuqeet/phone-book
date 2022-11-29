@@ -18,9 +18,9 @@ describe('Contacts API', () => {
     const res = await request(app)
       .post('/api/v1/contacts')
       .send({
-        firstName: 'Abdul Muqeet',
-        lastName: 'Arshad',
-        phoneNumber: '03096890060'
+        firstName: 'David',
+        lastName: 'John',
+        phoneNumber: '123456789'
       })
     expect(res.statusCode).toEqual(200)
     expect(res.body).toHaveProperty('message')
@@ -32,9 +32,9 @@ describe('Contacts API', () => {
       const res = await request(app)
         .patch('/api/v1/contacts/18')
         .send({
-          firstName: 'Abdul Muqeet',
-          lastName: 'Arshad Update',
-          phoneNumber: '03096890060'
+          firstName: 'David',
+          lastName: 'John Update',
+          phoneNumber: '123456789'
         })
       expect(res.statusCode).toEqual(200)
       expect(res.body).toHaveProperty('message')
@@ -42,10 +42,9 @@ describe('Contacts API', () => {
   })
 
   it('should delete a contact', async () => {
-      const res = await request(app)
-        .del('/api/v1/contacts/19')
-      expect(res.statusCode).toEqual(200)
-      expect(res.body).toHaveProperty('message')
-      expect(res.body.message).toMatch(/Successfully deleted contact/)
+    const res = await request(app).del('/api/v1/contacts/19')
+    expect(res.statusCode).toEqual(200)
+    expect(res.body).toHaveProperty('message')
+    expect(res.body.message).toMatch(/Successfully deleted contact/)
   })
 })
