@@ -81,7 +81,6 @@ const Home = () => {
 
   const handleContact = async values => {
     if (isEdit) {
-      console.log('update: ', values)
       await handleUpdateContact(values)
     } else {
       await handleAddContact(values)
