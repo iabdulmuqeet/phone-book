@@ -9,10 +9,7 @@ app.use(express.json())
 app.use(cors({ origin: '*' }))
 app.use(express.urlencoded({ extended: true }))
 
-if (app.get('env') === 'development') {
-  app.use(morgan('tiny'))
-  console.log('Morgan enable...')
-}
+if (app.get('env') === 'development') app.use(morgan('tiny'))
 
 app.use('/api/v1', allRoutes)
 

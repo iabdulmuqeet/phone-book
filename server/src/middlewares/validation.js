@@ -1,11 +1,5 @@
-exports.validation = (schema) => async (req, res, next) => {
-  const body = req.body
-  try {
-    await schema.validate(body, { abortEarly: false })
-    next()
-  } catch (err) {
-    res.status(422).json({
-      message: err.errors,
-    })
-  }
-}
+exports.validation = schema => (req, res, next) => (
+  schema.validate(req.body, { abortEarly: false })
+  .then(() => next())
+  .catch(err => res.status(422).json({ message: err.errors }))
+)
