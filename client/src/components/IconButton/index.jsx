@@ -1,8 +1,8 @@
 import './styles.css'
 
-const IconButton = ({ submit }) => (
-  <button onClick={submit} type='button' className='btn btn-danger'>
-    <i className='fa fa-trash' aria-hidden='true' />
+const IconButton = ({ submit, iconName, background }) => (
+  <button onClick={submit} type='button' className={`btn ${background}`}>
+    <i className={iconName} aria-hidden='true' />
   </button>
 )
 

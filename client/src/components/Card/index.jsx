@@ -2,7 +2,7 @@ import { IconButton } from 'components'
 
 import './styles.css'
 
-const Card = ({ contact, removeContact }) => (
+const Card = ({ contact, removeContact, updateContact }) => (
   <div className='d-flex w-100 justify-content-between card-wrapper'>
     <div className='d-flex flex-column'>
       <h3>
@@ -13,8 +13,9 @@ const Card = ({ contact, removeContact }) => (
         <p className='contact'>{contact.phoneNumber}</p>
       </div>
     </div>
-    <div className='d-flex flex-column justify-content-center'>
-      <IconButton submit={() => removeContact(contact.contactId)} />
+    <div className='d-flex flex-row align-items-center justify-content-between btn-wrapper'>
+      <IconButton iconName='fa fa-pencil' background='btn-info' submit={() => updateContact(contact)} />
+      <IconButton iconName='fa fa-trash' background='btn-danger' submit={() => removeContact(contact.contactId)} />
     </div>
   </div>
 )

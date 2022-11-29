@@ -1,4 +1,4 @@
-export const contactFieldsInitialValues = { firstName: '', lastName: '', phoneNumber: '' }
+export const contactInitialValues = { firstName: '', lastName: '', phoneNumber: '' }
 
 export const contactFields = [
   {
