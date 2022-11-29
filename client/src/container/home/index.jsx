@@ -18,20 +18,8 @@ const Home = () => {
   const [loading, setloading] = useState(false)
   const [isEdit, setisEdit] = useState(false)
   const [contactFieldsInitialValues, setContactFieldsInitialValues] = useState(contactInitialValues)
-
-  const [contacts, setContacts] = useState([{
-    firstName: 'zahid',
-    lastName: 'ali',
-    phoneNumber: '1827301289',
-    contactId: '1',
-  }])
-
-  const [allContacts, setAllContacts] = useState([{
-    firstName: 'zahid',
-    lastName: 'ali',
-    phoneNumber: '1827301289',
-    contactId: '2',
-  }])
+  const [contacts, setContacts] = useState([])
+  const [allContacts, setAllContacts] = useState([])
 
   const getAllContacts = async () => {
     setloading(true)
